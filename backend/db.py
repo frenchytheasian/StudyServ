@@ -1,5 +1,4 @@
 import pymongo
-from pprint import pprint
 from settings import mongo_uri
 
 def get_db():
@@ -13,22 +12,25 @@ def get_db():
 
 db = get_db()
 
-def get_study_spots():
-    pass
+def get_study_spots(location):
+    cursor = db['spots'].find({'zipcode': 63121})
+    spots = list(cursor)
+    return spots
 
-def get_study_spot():
-    pass
+def get_study_spot(id):
+    return {}
 
-def add_study_spot(spot_id, name, location, photos):
+def add_study_spot(name, zipcode, location):
     """
     Creates a new study spot with the following fields:
     """
 
-    spot_doc = {'spot_id': spot_id, 'name': name, 'location': location, 'avg_rating': None, 'ratings': [], 'reviews': [], 'photos': photos}
-    return db['spots'].insert_one(spot_doc)
+    spot_doc = {'spot_id': 2, 'name': name, 'zipcode': zipcode, 'location': location, 'attributes': [], 'avg_rating': None, 'ratings': [], 'reviews': [], 'photos': []}
+    id = db['spots'].insert_one(spot_doc)
+    return "finished"
 
 def add_rating(rating, review):
     pass
 
 if __name__ == "__main__":
-    add_study_spot(1, 'Lovejoy Library', 'https://goo.gl/maps/zD79Mvi9XH9MXAPNA', ['photo.jpg', 'image.jpg'])
+    pass
