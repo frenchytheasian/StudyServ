@@ -1,3 +1,4 @@
+
 from flask import Flask, jsonify
 import json
 
@@ -22,3 +23,4 @@ def create_spot():
 
 if __name__ == "__main__":
     app.run()
+
