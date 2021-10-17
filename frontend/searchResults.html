@@ -2,134 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StudyServ - Results</title>
+    <link rel='icon' type='image/png' href='images/favicon.ico' sizes='any'>
     <script src="vue.js"></script>
 </head>
+
+<style>
+    /* Create a Parallax Effect */
+    body{
+        background-origin: border-box;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('images/graphBkg.jpg');
+        min-height: 100%;
+    }
+</style>
+
 <body>
-    <div id="app">
-        {{ message }}
-        <script>var app = new Vue({
-            el: '#app',
-            data: {
-              message: 'Hello Vue!'
-            }
-          })</script>
+    <!--StudyServ Logo & Header-->
+    <div style="margin-left:220px">
+        <header class="w3-bar w3-panel w3-round-xlarge">
+            <div class="w3-left w3-container">
+                <img src='images/StudyServ.png'>
+            </div>
+        </header>
     </div>
+    <!--END OF HEADER-->
+    <!--SIDEBAR-->
+    <!--SIDEBAR-->
+    <div>
+        <nav class="w3-sidebar w3-bar-block w3-light-gray w3-collapse w3-top" style="z-index:3;width:200px" id="sidebar1">
+            <div class="w3-container w3-display-container w3-padding-16">
+                <h3 class="w3-wide"><b>Filters</b></h3>
+            </div>
+            <div class="w3-padding-64 w3-large w3-text-gray">
+                <a href="#chairs" class="w3-bar-item w3-button">Most Popular</a>
+                <a href="#tables" class="w3-bar-item w3-button">Best Lighting</a>
+                <a href="#beds" class="w3-bar-item w3-button">Cost Friendly</a>
+                <a href="#wardrobes" class="w3-bar-item w3-button">Best Reviewed</a>
+                <a href="#kitchen" class="w3-bar-item w3-button">Food</a>
+                <a href="#bath" class="w3-bar-item w3-button">Caffeine</a>
+            </div>
+        </div>
 
-    <div id="app-2">
 
-        <span v-bind:title="message">
-            Hover your mouse over me for a few seconds
-            to see my dynamically bound title!
-            <script>
-                var app2 = new Vue({
-                    el: '#app-2',
-                    data: {
-                        message: 'You loaded this page on ' + new Date().toLocaleString()
-                    }
-                })
-            </script>
-        </span>
 
-    </div>
-
-    <div id="app-3">
-        <span v-if="seen">Now you see me</span>
-        <script>
-            var app3 = new Vue({
-            el: '#app-3',
-            data: {
-                seen: true
-            }
-            })
-        </script>
-    </div>
-
-    <div id="app-4">
-        <ol>
-            <li v-for="todo in todos">
-                {{ todo.text }}
-            </li>
-        </ol>
-        <script>
-            var app4 = new Vue({
-                el: '#app-4',
-                data: {
-                    todos: [
-                        { text: 'Learn JavaScript' },
-                        { text: 'Learn Vue' },
-                        { text: 'Build something awesome' }
-                    ]
-                }
-            })
-        </script>
-    </div>
-
-    <div id="app-5">
-        <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">Reverse Message</button>
-        <script>
-            var app5 = new Vue({
-                el: '#app-5',
-                data: {
-                    message: 'Hello Vue.js!'
-                },
-                methods: {
-                    reverseMessage: function () {
-                        this.message = this.message.split('').reverse().join('')
-                    }
-                }
-            })
-            </script>
-    </div>
-
-    <div id="app-6">
-        <p>{{ message }}</p>
-        <input v-model="message">
-        <script>
-            var app6 = new Vue({
-                el: '#app-6',
-                data: {
-                    message: 'Hello Vue!'
-                }
-            })
-        </script>
-    </div>
-
-    <div id="app-7">
-        <ol>
-            <!--
-            Now we provide each todo-item with the todo object
-            it's representing, so that its content can be dynamic.
-            We also need to provide each component with a "key",
-            which will be explained later.
-            -->
-            <todo-item
-                v-for="item in groceryList"
-                v-bind:todo="item"
-                v-bind:key="item.id"
-            ></todo-item>
-        </ol>
-        <script>
-            Vue.component('todo-item', {
-                props: ['todo'],
-                template: '<li>{{ todo.text }}</li>'
-            })
-
-            var app7 = new Vue({
-                el: '#app-7',
-                data: {
-                    groceryList: [
-                        { id: 0, text: 'Vegetables' },
-                        { id: 1, text: 'Cheese' },
-                        { id: 2, text: 'Whatever else humans are supposed to eat' }
-                    ]
-                }
-            })
-        </script>
-        
-    </div>
 </body>
 </html>
