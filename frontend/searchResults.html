@@ -22,6 +22,24 @@
         background-image: url('images/graphBkg.jpg');
         min-height: 100%;
     }
+
+    /*Miscellaneous styling */
+    .w3-container.w3-round-xlarge.w3-light-gray:hover{transform: scale(1.007);}
+
+    header {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
 </style>
 
 <body>
