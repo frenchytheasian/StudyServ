@@ -33,6 +33,11 @@
             background-color: #f85a97;
         }
 
+        .submitBtn:hover, .submitBtn:focus {
+            background-color: #797979;
+            
+        }
+
         #myInput {
             box-sizing: border-box;
             background-image: url('searchicon.png');
@@ -112,10 +117,11 @@
     <!--Search Bar & Submit Button-->
     <div class="w3-card-4  w3-margin">
         <center style="margin-top:50px">
-            <input id="bar" class="w3-left" type="text" style="width:90%" placeholder="Search for StudySpot..">
-            <!--Search Button-->
-            <a id="searchBtn" class="active" style="width:10%" href="searchResults.html">Submit</a>
-
+            <form>
+                <input id="bar" class="w3-left" type="text" style="width:90%" placeholder="Search for StudySpot..">
+                <!--Search Button-->
+                <button type="submit" formaction="searchResults.html" id="searchBtn" class="submitBtn" style="width:10%">Search</a>
+            </form>
             <!--School selection-->
             
         </center>
