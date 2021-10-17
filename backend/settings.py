@@ -9,7 +9,7 @@ def mongo_uri():
     env_path = Path('.')/'.env'
     load_dotenv(dotenv_path=env_path)
 
-    """ MONGO_URI = os.getenv("MONGO_URI")
+    MONGO_URI = os.getenv("MONGO_URI")
 
-    return MONGO_URI """
+    return MONGO_URI
 
