@@ -60,19 +60,70 @@
                 <h3 class="w3-wide"><b>Filters</b></h3>
             </div>
             <div class="w3-padding-64 w3-large w3-text-gray">
-                <a href="#chairs" class="w3-bar-item w3-button">Most Popular</a>
-                <a href="#tables" class="w3-bar-item w3-button">Best Lighting</a>
-                <a href="#beds" class="w3-bar-item w3-button">Cost Friendly</a>
-                <a href="#wardrobes" class="w3-bar-item w3-button">Best Reviewed</a>
-                <a href="#kitchen" class="w3-bar-item w3-button">Food</a>
-                <a href="#bath" class="w3-bar-item w3-button">Caffeine</a>
+                
+                <a href="#food" onclick="filter('Food')" class="w3-bar-item w3-button">Food</a>
+                <a href="#caffeine" onclick="filter('Caffeine')" class="w3-bar-item w3-button">Caffeine</a>
+                <a href="#groupSeats" onclick="filter('Group')"class="w3-bar-item w3-button">Group Seating</a>
+                <a href="#outlets" onclick="filter('Outlets')" class="w3-bar-item w3-button">Outlets</a>
+                <a href="#bgnoise" onclick="filter('BGNoise')" class="w3-bar-item w3-button">Low Background Noise</a>
+                <a href="#clear" onclick="filter('Clear')" id="clear" class="w3-hide w3-bar-item w3-button">Clear Filters</a>
+
+                <script>
+                    function filter(filterType) {
+                        switch(filterType) {
+                            case 'Food':
+                                //qLounge
+                                document.getElementById('clear').classList.remove('w3-hide')
+                                document.getElementById('qLounge').classList.add('w3-hide')
+                                document.getElementById('fireSide').classList.add('w3-hide')
+                                document.getElementById('STLlibrary').classList.add('w3-hide')
+
+                                break;
+                            case 'Caffeine':
+                                document.getElementById('clear').classList.remove('w3-hide')
+                                document.getElementById('qLounge').classList.add('w3-hide')
+                                document.getElementById('fireSide').classList.add('w3-hide')
+                                document.getElementById('STLlibrary').classList.add('w3-hide')
+                                break;
+                            case 'Group':
+                                document.getElementById('clear').classList.remove('w3-hide')
+                                document.getElementById('fireSide').classList.add('w3-hide')
+                                break;
+                            case 'Outlets': 
+                                document.getElementById('clear').classList.remove('w3-hide')
+                                document.getElementById('einstein').classList.add('w3-hide')
+                                document.getElementById('gelateria').classList.add('w3-hide')
+                                break;
+                            case 'BGNoise':
+                                document.getElementById('clear').classList.remove('w3-hide')
+                                document.getElementById('einstein').classList.add('w3-hide')
+                                document.getElementById('kaldis').classList.add('w3-hide')
+                                document.getElementById('rise').classList.add('w3-hide')
+                                document.getElementById('royale').classList.add('w3-hide')
+                                break;
+                            case 'Clear':
+                                document.getElementById('qLounge').classList.remove('w3-hide')
+                                document.getElementById('einstein').classList.remove('w3-hide')
+                                document.getElementById('fireSide').classList.remove('w3-hide')
+                                document.getElementById('kaldis').classList.remove('w3-hide')
+                                document.getElementById('rise').classList.remove('w3-hide')
+                                document.getElementById('STLlibrary').classList.remove('w3-hide')
+                                document.getElementById('gelateria').classList.remove('w3-hide')
+                                document.getElementById('royale').classList.remove('w3-hide')
+                                document.getElementById('clear').classList.add('w3-hide')
+                            default: 
+                                //literally eat beans
+                                break;
+                        }
+                    }
+                </script>
             </div>
         </nav>
     </div>
 
     <!--Needs to be dynamically created by Search Result, possibly use Vue.js in future implementaion-->
     <div class="w3-margin-left">
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="einstein" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
                 <img src="images/EinsteinBros.jpg" alt="Picture" style="width:100%">
                 <div class="w3-container">
@@ -94,7 +145,7 @@
             </div>
         </div>
         <p></p>
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="qLounge" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
                 <img src="images/QuietLounge.jpg" alt="Picture" style="width:100%">
                 <div class="w3-container">
@@ -116,7 +167,7 @@
             </div>
         </div>
         <p></p>
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="fireSide" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
                 <img src="images/FireSide.jpg" alt="Picture" style="width:100%">
                 <div class="w3-container">
@@ -138,7 +189,7 @@
             </div>
         </div>
         <p></p>
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="kaldis" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
                 <img src="images/kaldis.jpg" alt="Picture" style="width:100%">
                 <div class="w3-container">
@@ -160,29 +211,29 @@
             </div>
         </div>
         <p></p>
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="rise" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
-                <img src="images/graphBkgDark.jpg" alt="Picture" style="width:100%">
+                <img src="images/o.jpg" alt="Picture" style="width:100%">
                 <div class="w3-container">
-                    <h4><b>Fire Side Lounge UMSL</b></h4>
+                    <h4><b>Rise Coffee</b></h4>
                     <p>
                         <ul>
-                            <p><i class="fas fa-times"></i> &emsp; Food</p>
-                            <p><i class="fas fa-times"></i> &emsp; Caffeine</p>
-                            <p><i class="fas fa-times"></i> &emsp; Group Seating</p>
-                            <p><i class="fas fa-times"></i> &emsp; Outdoor Seating</p>
+                            <p><i class="fas fa-check"></i> &emsp; Food</p>
+                            <p><i class="fas fa-check"></i> &emsp; Caffeine</p>
+                            <p><i class="fas fa-check"></i> &emsp; Group Seating</p>
+                            <p><i class="fas fa-check"></i> &emsp; Outdoor Seating</p>
                             <p><i class="fas fa-check"></i> &emsp; Outlets</p>
                             <p><i class="fas fa-times"></i> &emsp; Low Background Noise</p>
                         </ul>
                     </p>
                     <p>
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                     </p>
                 </div>
             </div>
         </div>
         <p></p>
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="STLlibrary" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
                 <img src="images/CentralLibrary.jpg" alt="Picture" style="width:100%">
                 <div class="w3-container">
@@ -204,7 +255,7 @@
             </div>
         </div>
         <p></p>
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="gelateria" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
                 <img src="images/gelateria.jpg" alt="Picture" style="width:100%">
                 <div class="w3-container">
@@ -226,7 +277,7 @@
             </div>
         </div>
         <p></p>
-        <div class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
+        <div id="royale" class="w3-container w3-round-xlarge w3-light-gray" style="margin-left:220px; margin-right:30px">
             <div class="w3-card w3-round-xlarge w3-margin" style="width:97%">
                 <img src="images/theRoyale.jpeg" alt="Picture" style="width:100%">
                 <div class="w3-container">
